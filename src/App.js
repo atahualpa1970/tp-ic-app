@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import logo from './logo.svg'
+import './App.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [valueA, setValueA] = useState(false)
+    const [valueB, setValueB] = useState(false)
+
+
+    const changeValueC = () => {
+        var valueC = ""
+        if (!valueA && !valueB) valueC = "FALSE"
+        if (valueA && !valueB) valueC = "[ A ]"
+        if (!valueA && valueB) valueC = "[ B ]"
+        if (valueA && valueB) valueC = "TRUE"
+        return valueC
+    }
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                <div>
+                    <div>
+                        <img src={logo} className="App-logo" alt="logo" />
+                    </div>
+                    <div>
+                        <button name="a" className={(valueA)?"btn btn-primary":"btn btn-danger"}
+                            onClick={() => setValueA(!valueA)}> [ A ] </button>
+                        <button name="b" className={(valueB)?"btn btn-primary":"btn btn-danger"}
+                            onClick={() => setValueB(!valueB)}> [ B ] </button>
+                        <button name="c" className="btn btn-light">{changeValueC()}</button>
+                    </div>
+                </div>
+            </header>
+        </div>
+    );
 }
 
 export default App;
