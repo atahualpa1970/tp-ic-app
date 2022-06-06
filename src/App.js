@@ -25,11 +25,13 @@ function App() {
                         <img src={logo} className="App-logo" alt="logo" />
                     </div>
                     <div>
-                        <button name="a" className={(valueA)?"btn btn-primary":"btn btn-danger"}
+                        <button name="a" 
+                            className={(valueA)?"btn btn-lg btn-primary":"btn btn-lg btn-danger"}
                             onClick={() => setValueA(!valueA)}> [ A ] </button>
-                        <button name="b" className={(valueB)?"btn btn-primary":"btn btn-danger"}
+                        <button name="b" 
+                            className={(valueB)?"btn btn-lg btn-primary":"btn btn-lg btn-danger"}
                             onClick={() => setValueB(!valueB)}> [ B ] </button>
-                        <button name="c" className="btn btn-light">{changeValueC()}</button>
+                        <button name="c" className="btn btn-lg btn-light">{changeValueC()}</button>
                     </div>
                 </div>
             </header>
