@@ -1,21 +1,12 @@
 import React, { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import { changeValueC } from './controlChangeValue'
 
 function App() {
 
     const [valueA, setValueA] = useState(false)
     const [valueB, setValueB] = useState(false)
-
-
-    const changeValueC = () => {
-        var valueC = ""
-        if (!valueA && !valueB) valueC = "FALSE"
-        if (valueA && !valueB) valueC = "[ A ]"
-        if (!valueA && valueB) valueC = "[ B ]"
-        if (valueA && valueB) valueC = "TRUE"
-        return valueC
-    }
 
     return (
         <div className="App">
@@ -31,7 +22,9 @@ function App() {
                         <button name="b" 
                             className={(valueB)?"btn btn-lg btn-primary":"btn btn-lg btn-danger"}
                             onClick={() => setValueB(!valueB)}> [ B ] </button>
-                        <button name="c" className="btn btn-lg btn-light">{changeValueC()}</button>
+                        <button name="c" className="btn btn-lg btn-light">
+                            {changeValueC(valueA, valueB)}
+                        </button>
                     </div>
                 </div>
             </header>
