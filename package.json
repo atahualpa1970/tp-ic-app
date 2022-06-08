@@ -16,6 +16,7 @@
   "scripts": {
     "test": "npx jest",
     "start": "react-scripts start",
+    "prebuild": "npx jest",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },

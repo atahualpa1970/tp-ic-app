@@ -13,7 +13,7 @@ function App() {
             <header className="App-header">
                 <div>
                     <div>
-                        <h3>Integracion Continua V1.0</h3>
+                        <h3>Integracion Continua V1.2</h3>
                         <img src={logo} className="App-logo" alt="logo" />
                     </div>
                     <div>
